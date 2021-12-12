@@ -12,7 +12,7 @@ const config = {
   port: 3040, // verify port.
   hostURL: 'localhost:3040', // used only by swagger
   mongoDBConnectionString: 'mongodb://localhost/homeowner',
-  geocodeioApiKey: '89616d1d55b56b60658d9d581f566686d1d66b6',
+  geocodeioApiKey: '',
 };
 
 process.env.NODE_ENV = process.env.NODE_ENV.trim();
