@@ -1,0 +1,68 @@
+{
+  "name": "homeowner-service",
+  "version": "1.0.0",
+  "description": "homeowner-service",
+  "main": "index.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "scripts": {
+    "test": "export NODE_ENV=dev && npm run eslintTestFolder && jest --config ./jest.config.json --coverage",
+    "test:watch": "npm run test -- --watch",
+    "build": "babel ./src --out-dir ./dist --source-maps --copy-files",
+    "start": "npm run build && export NODE_ENV=dev && node dist/index.js",
+    "localStart": "export NODE_ENV=dev && nodemon --exec babel-node -- src/index.js",
+    "clean": "rm -rf dist && npm run build",
+    "pretest": "eslint src",
+    "eslintRun": "eslint src --fix",
+    "eslintTestFolder": "eslint __tests__ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "nodejs",
+    "homeowner",
+    "REST",
+    "CRUD",
+    "mongodb"
+  ],
+  "author": "ACI",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "@babel/runtime": "^7.14.0",
+    "@jest/globals": "^26.6.2",
+    "agenda": "^2.3.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-xml-bodyparser": "^0.3.0",
+    "geocodio-library-node": "^1.4.0",
+    "helmet": "^3.23.3",
+    "joi": "^17.4.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.7",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "swagger-jsdoc": "^3.7.0",
+    "swagger-ui-express": "^4.1.6",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/register": "^7.13.16",
+    "chai": "^4.3.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "supertest": "^4.0.2"
+  }
+}
